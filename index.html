@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blackwater Tattoo | Custom Tattoo Studio in Ocean Beach, San Diego</title>
+<meta name="description" content="Blackwater Tattoo is a custom tattoo studio in Ocean Beach, San Diego, CA, doing black-and-grey realism, Japanese style, American traditional, and more. Walk-ins welcome.">
+<meta name="theme-color" content="#0b0c0a">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink: #0b0c0a;
+    --charcoal: #151713;
+    --charcoal-2: #1c1f19;
+    --charcoal-3: #22261f;
+    --paper: #efe9da;
+    --paper-dim: #b9b2a0;
+    --paper-faint: #8b8576;
+    --rust: #b8471f;
+    --rust-bright: #e05a28;
+    --moss: #5c7052;
+    --moss-bright: #7c9670;
+    --gold: #cc9a44;
+    --gold-bright: #e6b862;
+    --line: rgba(239,233,218,0.12);
+    --line-strong: rgba(239,233,218,0.22);
+    --focus: #f2c46a;
+
+    --font-display: 'Anton', 'Archivo', sans-serif;
+    --font-body: 'Archivo', -apple-system, sans-serif;
+
+    --maxw: 1160px;
+
+    --sp-1: 0.5rem;
+    --sp-2: 1rem;
+    --sp-3: 1.5rem;
+    --sp-4: 2.5rem;
+    --sp-5: 4rem;
+    --sp-6: 6rem;
+  }
+
+  *, *::before, *::after{ box-sizing: border-box; }
+
+  html{
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body{
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 0.96rem + 0.2vw, 1.09rem);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  img, svg{ max-width: 100%; display: block; }
+
+  a{ color: inherit; }
+
+  h1, h2, h3, h4{
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 0;
+    color: var(--paper);
+    line-height: 1.05;
+  }
+
+  p{ margin: 0 0 1em; }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Focus visibility */
+  a:focus-visible,
+  button:focus-visible{
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ============ Texture backgrounds (CSS only) ============ */
+  .grain-bg{
+    position: relative;
+    background-color: var(--ink);
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(184,71,31,0.09), transparent 42%),
+      radial-gradient(circle at 88% 68%, rgba(92,112,82,0.08), transparent 48%);
+  }
+
+  .grain-bg::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2000;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ============ Skip link ============ */
+  .skip-link{
+    position: absolute;
+    left: -999px;
+    top: auto;
+    background: var(--rust-bright);
+    color: var(--ink);
+    padding: 0.85rem 1.25rem;
+    z-index: 1000;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .skip-link:focus{
+    left: 1rem;
+    top: 1rem;
+  }
+
+  /* ============ Header ============ */
+  .site-header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11,12,10,0.86);
+    backdrop-filter: blur(10px) saturate(1.1);
+    -webkit-backdrop-filter: blur(10px) saturate(1.1);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.5rem;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    gap: 1rem;
+  }
+
+  .brand{
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+    letter-spacing: 0.015em;
+    color: var(--paper);
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+  .brand:hover{ color: var(--rust-bright); }
+  .brand .mark{ flex-shrink: 0; transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .brand:hover .mark{ transform: rotate(-8deg); }
+
+  .main-nav ul{
+    list-style: none;
+    display: flex;
+    gap: 1.9rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-nav a{
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--paper-dim);
+    position: relative;
+    padding: 0.3rem 0.1rem;
+    transition: color 0.2s ease;
+  }
+  .main-nav a::after{
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -2px;
+    height: 2px;
+    background: var(--rust-bright);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .main-nav a:hover,
+  .main-nav a:focus-visible{ color: var(--paper); }
+  .main-nav a:hover::after,
+  .main-nav a:focus-visible::after{ transform: scaleX(1); }
+
+  .header-cta{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 0.6rem 1.1rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+  .header-cta:hover{ background: var(--gold-bright); transform: translateY(-1px); }
+
+  .nav-toggle{
+    display: none;
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    color: var(--paper);
+    width: 44px;
+    height: 44px;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .nav-toggle svg{ width: 22px; height: 22px; }
+
+  @media (max-width: 780px){
+    .header-cta{ display: none; }
+    .main-nav{
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: var(--charcoal);
+      border-bottom: 1px solid var(--line);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .main-nav.open{ max-height: 400px; }
+    .main-nav ul{
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem 1.5rem 1.25rem;
+    }
+    .main-nav li{ border-top: 1px solid var(--line); }
+    .main-nav a{
+      display: block;
+      padding: 0.95rem 0.2rem;
+    }
+    .nav-toggle{ display: inline-flex; }
+  }
+
+  /* ============ Hero ============ */
+  .hero{
+    position: relative;
+    padding: clamp(4.5rem, 8vw, 7.5rem) 0 clamp(4rem, 7vw, 6rem);
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 1000px 560px at 50% -12%, rgba(184,71,31,0.22), transparent 60%),
+      linear-gradient(180deg, var(--ink) 0%, var(--charcoal) 100%);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-linework{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.5;
+  }
+  .hero-linework svg{ width: 100%; height: 100%; }
+
+  .hero::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, var(--charcoal) 96%);
+    pointer-events: none;
+  }
+
+  .hero-inner{
+    position: relative;
+    z-index: 1;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .hero-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--font-display);
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    border: 1px solid rgba(204,154,68,0.4);
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fade-up 0.7s ease forwards;
+  }
+  .hero-badge svg{ width: 14px; height: 14px; }
+
+  .hero h1{
+    font-size: clamp(2.75rem, 6vw + 1rem, 6.2rem);
+    line-height: 0.98;
+    margin-bottom: 1.3rem;
+    opacity: 0;
+    animation: fade-up 0.7s ease 0.12s forwards;
+    text-shadow: 0 2px 40px rgba(184,71,31,0.25);
+  }
+
+  .hero h1 .eyebrow{
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: clamp(0.72rem, 1.6vw, 0.92rem);
+    color: var(--rust-bright);
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-tagline{
+    max-width: 640px;
+    margin: 0 auto 2.6rem;
+    font-size: clamp(1.05rem, 1.4vw + 0.6rem, 1.35rem);
+    color: var(--paper-dim);
+    opacity: 0;
+    animation: fade-up 0.7s ease 0.24s forwards;
+  }
+
+  .hero-ctas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    opacity: 0;
+    animation: fade-up 0.7s ease 0.36s forwards;
+  }
+
+  @keyframes fade-up{
+    from{ opacity: 0; transform: translateY(16px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.92rem;
+    padding: 1rem 2rem;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    min-height: 44px;
+  }
+  .btn:hover{ transform: translateY(-2px); }
+  .btn:active{ transform: translateY(0); }
+
+  .btn-primary{
+    background: var(--rust-bright);
+    color: #fff8f0;
+    border-color: var(--rust-bright);
+    box-shadow: 0 8px 24px -8px rgba(224,90,40,0.55);
+  }
+  .btn-primary:hover{ background: #f06a37; border-color: #f06a37; box-shadow: 0 10px 28px -6px rgba(224,90,40,0.7); }
+
+  .btn-ghost{
+    background: rgba(239,233,218,0.04);
+    color: var(--paper);
+    border-color: var(--line-strong);
+  }
+  .btn-ghost:hover{ border-color: var(--paper-dim); background: rgba(239,233,218,0.08); }
+
+  /* ============ Section scaffolding ============ */
+  section{ padding: clamp(4rem, 7vw, 6.5rem) 0; }
+
+  .section-head{
+    text-align: center;
+    max-width: 660px;
+    margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .kicker{
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust-bright);
+    margin-bottom: 1rem;
+  }
+
+  .section-head h2{
+    font-size: clamp(2rem, 3.4vw + 0.6rem, 3.1rem);
+  }
+
+  .section-head p{
+    margin-top: 1.15rem;
+    color: var(--paper-dim);
+    font-size: 1.12rem;
+  }
+
+  .reveal{
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-stagger.is-visible > *{
+    transition-delay: calc(var(--stagger-i, 0) * 70ms);
+  }
+
+  /* ============ About ============ */
+  .about{
+    background: var(--charcoal);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+
+  .about-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2.5rem, 5vw, 4rem);
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .about-copy .lede{
+    font-size: clamp(1.2rem, 1.6vw + 0.7rem, 1.5rem);
+    color: var(--paper);
+    font-weight: 500;
+    margin-bottom: 1.1rem;
+  }
+
+  .about-copy p{
+    font-size: 1.08rem;
+    color: var(--paper-dim);
+  }
+
+  .est-row{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .est-number{
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    color: var(--gold-bright);
+    line-height: 1;
+  }
+
+  .est-label{
+    font-size: 0.86rem;
+    letter-spacing: 0.03em;
+    color: var(--paper-dim);
+    line-height: 1.4;
+  }
+
+  .about-visual{
+    position: relative;
+  }
+
+  .frame-card{
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    box-shadow: 0 30px 60px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,0,0,0.2);
+    background: var(--charcoal-2);
+  }
+
+  .frame-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85) contrast(1.08) brightness(0.96);
+    display: block;
+  }
+
+  .frame-card.owner-frame{
+    max-width: 320px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 5;
+  }
+  .frame-card.owner-frame img{ object-position: center 20%; }
+
+  .frame-card .frame-tag{
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+    background: linear-gradient(0deg, rgba(11,12,10,0.92) 0%, transparent 100%);
+    z-index: 1;
+  }
+
+  .owner-name{
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    margin-bottom: 0.6rem;
+  }
+
+  /* ============ Services ============ */
+  .services{ background: var(--ink); }
+
+  .services-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card{
+    background: var(--charcoal-2);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 2.1rem 1.85rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card::before{
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--rust-bright), var(--gold));
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .service-card:hover{
+    transform: translateY(-6px);
+    border-color: rgba(204,154,68,0.35);
+    background: var(--charcoal-3);
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6);
+  }
+  .service-card:hover::before{ transform: scaleY(1); }
+
+  .service-icon{
+    width: 38px;
+    height: 38px;
+    margin-bottom: 1.2rem;
+    color: var(--gold-bright);
+    transition: transform 0.3s ease;
+  }
+  .service-card:hover .service-icon{ transform: scale(1.08) rotate(-4deg); }
+
+  .service-card h3{
+    font-size: 1.08rem;
+    margin-bottom: 0.55rem;
+    letter-spacing: 0.01em;
+    text-transform: none;
+  }
+
+  .service-card p{
+    color: var(--paper-dim);
+    font-size: 0.97rem;
+    margin: 0;
+  }
+
+  .walkin-note{
+    text-align: center;
+    margin-top: 2.75rem;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.92rem;
+    color: var(--moss-bright);
+  }
+  .walkin-note svg{
+    width: 18px; height: 18px;
+    display: inline-block;
+    vertical-align: -3px;
+    margin-right: 0.4rem;
+  }
+
+  /* ============ Gallery ============ */
+  .gallery{ background: var(--charcoal); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  .gallery-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .gallery-item{
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    aspect-ratio: 4 / 3;
+    background: var(--charcoal-2);
+  }
+
+  .gallery-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85) contrast(1.05);
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), filter 0.5s ease;
+  }
+
+  .gallery-item:hover img{ transform: scale(1.06); filter: saturate(1) contrast(1.08); }
+
+  .gallery-item figcaption{
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 0.9rem 1rem;
+    font-size: 0.85rem;
+    color: var(--paper-dim);
+    background: linear-gradient(0deg, rgba(11,12,10,0.94) 0%, transparent 100%);
+  }
+
+  .gallery-note{
+    text-align: center;
+    max-width: 640px;
+    margin: 2rem auto 0;
+    font-size: 0.92rem;
+    color: var(--paper-faint);
+    font-style: italic;
+  }
+
+  /* ============ Highlights strip ============ */
+  .highlights{
+    background: linear-gradient(135deg, var(--rust) 0%, #7c3213 100%);
+    padding: 0;
+    border-top: 1px solid rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .highlights::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(115deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 50px);
+    pointer-events: none;
+  }
+
+  .highlights-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    position: relative;
+  }
+
+  .highlight-item{
+    padding: clamp(2.25rem, 4vw, 3rem) 2rem;
+    text-align: center;
+    border-left: 1px solid rgba(255,255,255,0.16);
+    transition: background-color 0.3s ease;
+  }
+  .highlight-item:first-child{ border-left: none; }
+  .highlight-item:hover{ background: rgba(0,0,0,0.1); }
+
+  @media (max-width: 640px){
+    .highlight-item{ border-left: none; border-top: 1px solid rgba(255,255,255,0.16); }
+    .highlight-item:first-child{ border-top: none; }
+  }
+
+  .highlight-item svg{
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 1.1rem;
+    color: #ffe4cc;
+  }
+
+  .highlight-item h3{
+    font-size: 1.08rem;
+    color: #fff8f0;
+    margin-bottom: 0.5rem;
+    text-transform: none;
+  }
+
+  .highlight-item p{
+    color: rgba(255,244,232,0.88);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  /* ============ FAQ ============ */
+  .faq{ background: var(--ink); }
+
+  .faq-list{
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .faq-item{
+    background: var(--charcoal-2);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: border-color 0.25s ease;
+  }
+  .faq-item[open]{ border-color: rgba(204,154,68,0.4); }
+
+  .faq-item summary{
+    cursor: pointer;
+    list-style: none;
+    padding: 1.35rem 1.6rem;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--paper);
+    transition: color 0.2s ease;
+  }
+  .faq-item summary::-webkit-details-marker{ display: none; }
+  .faq-item summary:hover{ color: var(--gold-bright); }
+  .faq-item summary:focus-visible{
+    outline: 3px solid var(--focus);
+    outline-offset: -3px;
+  }
+
+  .faq-icon{
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    color: var(--rust-bright);
+    transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+  }
+  .faq-item[open] .faq-icon{ transform: rotate(45deg); }
+
+  .faq-answer{
+    padding: 0 1.6rem 1.5rem;
+    color: var(--paper-dim);
+    font-size: 1rem;
+  }
+  .faq-answer p{ margin: 0; }
+
+  /* ============ Visit ============ */
+  .visit{
+    background: var(--charcoal);
+  }
+
+  .visit-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 860px){
+    .visit-grid{ grid-template-columns: 1.05fr 0.95fr; align-items: stretch; }
+  }
+
+  .visit-card{
+    background: var(--charcoal-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: clamp(1.9rem, 4vw, 2.6rem);
+    box-shadow: 0 24px 48px -30px rgba(0,0,0,0.6);
+  }
+
+  .visit-card h3{
+    font-size: 1.3rem;
+    margin-bottom: 1.6rem;
+    color: var(--gold-bright);
+  }
+
+  .info-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .info-list li{
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .info-list .icon-wrap{
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(224,90,40,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info-list svg{
+    width: 20px;
+    height: 20px;
+    color: var(--rust-bright);
+  }
+
+  .info-list h4{
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-size: 0.82rem;
+    color: var(--paper-dim);
+    margin: 0 0 0.35rem;
+  }
+
+  .info-list p{
+    margin: 0;
+    color: var(--paper);
+    font-size: 1.06rem;
+  }
+
+  .info-list a.text-link{
+    text-decoration: underline;
+    text-decoration-color: rgba(224,90,40,0.5);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s ease, color 0.2s ease;
+  }
+  .info-list a.text-link:hover{
+    color: var(--rust-bright);
+    text-decoration-color: var(--rust-bright);
+  }
+
+  .social-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .social-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+    text-decoration: none;
+    border: 1px solid var(--line-strong);
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  }
+  .social-link svg{ width: 15px; height: 15px; flex-shrink: 0; }
+  .social-link:hover,
+  .social-link:focus-visible{
+    color: var(--paper);
+    border-color: var(--gold);
+    background: rgba(204,154,68,0.08);
+    transform: translateY(-1px);
+  }
+
+  .map-visual{
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #232d1c 0%, var(--charcoal-2) 65%);
+    text-decoration: none;
+    padding: 2rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .map-visual:hover{ border-color: rgba(204,154,68,0.4); }
+  /* overflow:hidden on this element would clip a default outline, so use an inset box-shadow ring instead */
+  .map-visual:focus-visible{
+    outline: none;
+    box-shadow: inset 0 0 0 3px var(--focus);
+  }
+
+  .map-visual::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(239,233,218,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(239,233,218,0.06) 1px, transparent 1px);
+    background-size: 34px 34px;
+    mask-image: radial-gradient(circle at 50% 45%, black 0%, transparent 72%);
+  }
+
+  .map-visual-content{
+    position: relative;
+    text-align: center;
+  }
+
+  .map-pin{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1.1rem;
+    color: var(--rust-bright);
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+    animation: pin-bounce 2.6s ease-in-out infinite;
+  }
+
+  @keyframes pin-bounce{
+    0%, 100%{ transform: translateY(0); }
+    50%{ transform: translateY(-8px); }
+  }
+
+  .map-visual-content .cta-text{
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.98rem;
+    color: var(--paper);
+  }
+  .map-visual-content .cta-sub{
+    font-size: 0.88rem;
+    color: var(--paper-dim);
+    margin-top: 0.5rem;
+  }
+
+  .map-visual:hover .map-pin,
+  .map-visual:focus-visible .map-pin{ animation-play-state: paused; transform: translateY(-8px); }
+
+  /* ============ Footer ============ */
+  footer.site-footer{
+    background: var(--ink);
+    border-top: 1px solid var(--line);
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .footer-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-brand{
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+  }
+
+  .footer-brand .mark{ width: 30px; height: 30px; flex-shrink: 0; }
+
+  .footer-nav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.75rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-nav a{
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--paper-dim);
+    transition: color 0.2s ease;
+  }
+  .footer-nav a:hover{ color: var(--paper); }
+
+  .footer-bottom{
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--paper-faint);
+  }
+
+  .footer-bottom p{ margin: 0; }
+
+  /* ============ Utility ============ */
+  .visually-hidden{
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (min-width: 700px){
+    .about-grid{ grid-template-columns: 1.1fr 0.9fr; text-align: left; }
+    .about-copy{ text-align: left; }
+  }
+
+  /* ============ Reduced motion ============ */
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *, *::before, *::after{
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .hero-badge, .hero h1, .hero-tagline, .hero-ctas{
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+    .reveal{ opacity: 1; transform: none; }
+    .map-pin{ animation: none; }
+  }
+</style>
+      <!-- SEO:START (generated by _seo_inject.js) -->
+    <link rel="canonical" href="https://fansist.github.io/blackwater-tattoo/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Blackwater Tattoo" />
+    <meta property="og:title" content="Blackwater Tattoo: Tattoo Studio in Ocean Beach" />
+    <meta property="og:description" content="Black and gray, portrait, Japanese style and American traditional tattoos in Ocean Beach." />
+    <meta property="og:url" content="https://fansist.github.io/blackwater-tattoo/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://fansist.github.io/blackwater-tattoo/photos/photo1.jpg" />
+    <meta property="og:image:alt" content="Street-level photo of the Blackwater Tattoo storefront at 5003 Newport Ave, Ocean Beach, taken the morning after the shop's front window was damaged in a 2019 v" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blackwater Tattoo: Tattoo Studio in Ocean Beach" />
+    <meta name="twitter:description" content="Black and gray, portrait, Japanese style and American traditional tattoos in Ocean Beach." />
+    <meta name="twitter:image" content="https://fansist.github.io/blackwater-tattoo/photos/photo1.jpg" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TattooParlor","name":"Blackwater Tattoo","url":"https://fansist.github.io/blackwater-tattoo/","image":["https://fansist.github.io/blackwater-tattoo/photos/photo1.jpg"],"address":{"@type":"PostalAddress","addressLocality":"San Diego","addressRegion":"CA","addressCountry":"US"},"description":"Custom tattoo studio doing black-and-grey realism, fine line, and traditional work by appointment","areaServed":{"@type":"City","name":"San Diego"}}</script>
+    <!-- SEO:END -->
+  </head>
+<body class="grain-bg">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <svg class="mark" width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="18.5" stroke="#e05a28" stroke-width="1.5"/>
+        <path d="M20 8 L20 32 M12 14 L28 26 M28 14 L12 26" stroke="#efe9da" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="4" fill="#cc9a44"/>
+      </svg>
+      Blackwater Tattoo
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav-list" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="main-nav" id="main-nav-list" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="header-cta" href="https://www.google.com/maps/search/?api=1&query=Blackwater%20Tattoo%2C%205003%20Newport%20Ave%2C%20Ocean%20Beach%2C%20San%20Diego%2C%20CA" target="_blank" rel="noopener noreferrer">Get Directions</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="hero-linework" aria-hidden="true">
+      <svg viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#efe9da" stroke-width="1">
+          <path d="M -50 600 C 200 500, 300 650, 500 550 S 800 450, 1000 560 S 1300 500, 1450 600" opacity="0.08"/>
+          <path d="M -50 150 C 250 250, 350 80, 600 180 S 900 280, 1150 150 S 1350 220, 1450 150" opacity="0.06"/>
+          <circle cx="1180" cy="140" r="90" opacity="0.07"/>
+          <circle cx="1180" cy="140" r="60" opacity="0.09"/>
+          <path d="M1180 60 L1180 220 M1120 100 L1240 180 M1240 100 L1120 180" stroke-width="0.8" opacity="0.1"/>
+          <circle cx="150" cy="560" r="70" opacity="0.07"/>
+          <path d="M110 520 L190 600 M190 520 L110 600" stroke-width="0.8" opacity="0.09"/>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-inner">
+      <span class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ocean Beach &middot; San Diego, CA
+      </span>
+      <h1><span class="eyebrow">Walk-Ins Welcome &middot; Roots Since 1996</span>Blackwater Tattoo</h1>
+      <p class="hero-tagline">An old-school, gritty neighborhood tattoo parlor with deep local roots, authentic Ocean Beach &amp; Chula Vista SoCal tattoo culture, one needle at a time.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Blackwater%20Tattoo%2C%205003%20Newport%20Ave%2C%20Ocean%20Beach%2C%20San%20Diego%2C%20CA" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Get Directions
+        </a>
+        <a class="btn btn-ghost" href="#services">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-grid reveal">
+        <div class="about-copy">
+          <span class="kicker">The Shop</span>
+          <h2>Ink With Roots</h2>
+          <p class="lede">Custom tattoo studio doing black-and-grey realism, fine line, Japanese style, and traditional work by appointment.</p>
+          <p>Blackwater Tattoo is a real, working neighborhood shop, not a chain, not a franchise. It's the kind of place where the artists have been doing this since before it was trendy, working out of Ocean Beach with a related location in Chula Vista that traces back to 1996. Walk in, sit down, get real work from people who've earned their reputation the old-fashioned way: one client at a time.</p>
+          <div class="est-row">
+            <span class="est-number">1996</span>
+            <span class="est-label">Chula Vista location opened by<br>&ldquo;SouthBay Mike&rdquo; Kellerman</span>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="frame-card owner-frame">
+            <img src="photos/photo2.jpg" alt="Mike Kellerman, owner and tattoo artist at Blackwater Tattoo, speaking inside the shop." decoding="async" width="452" height="552">
+            <div class="frame-tag">Owner &amp; Artist</div>
+          </div>
+          <p class="owner-name" style="text-align:center; margin-top:1.1rem;">Mike &ldquo;SouthBay Mike&rdquo; Kellerman</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">What We Do</span>
+        <h2>Services</h2>
+        <p>Custom work across styles, built around what you actually want on your skin.</p>
+      </div>
+      <div class="services-grid reveal reveal-stagger">
+
+        <div class="service-card" style="--stagger-i:0;">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2 L12 22 M4 8 L20 16 M20 8 L4 16" stroke-linecap="round"/></svg>
+          <h3>Black &amp; Gray Tattoos</h3>
+          <p>Classic shading and depth, done clean and built to last.</p>
+        </div>
+
+        <div class="service-card" style="--stagger-i:1;">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="4"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6" stroke-linecap="round"/></svg>
+          <h3>Portrait Tattoos</h3>
+          <p>Detailed realism work capturing faces and likenesses.</p>
+        </div>
+
+        <div class="service-card" style="--stagger-i:2;">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12c3-5 6-7 9-7s6 2 9 7c-3 5-6 7-9 7s-6-2-9-7z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2"/></svg>
+          <h3>Japanese Style</h3>
+          <p>Bold traditional Irezumi-influenced imagery and flow.</p>
+        </div>
+
+        <div class="service-card" style="--stagger-i:3;">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3 L14.5 9 L21 9.5 L16 14 L17.5 21 L12 17 L6.5 21 L8 14 L3 9.5 L9.5 9 Z" stroke-linejoin="round"/></svg>
+          <h3>American Traditional</h3>
+          <p>Bold lines, saturated color, timeless West Coast style.</p>
+        </div>
+
+        <div class="service-card" style="--stagger-i:4;">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12 L20 12 M12 4 L12 20 M8 8 L16 8 M8 16 L16 16" stroke-linecap="round"/></svg>
+          <h3>Biomechanical</h3>
+          <p>Intricate mechanical and organic hybrid designs.</p>
+        </div>
+
+        <div class="service-card" style="--stagger-i:5;">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12c2-6 6-8 8-8s6 2 8 8c-2 6-6 8-8 8s-6-2-8-8z" stroke-linejoin="round"/><path d="M12 4 L12 20" stroke-linecap="round"/></svg>
+          <h3>Tribal</h3>
+          <p>Bold, graphic linework rooted in tribal tattoo tradition.</p>
+        </div>
+
+      </div>
+      <p class="walkin-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Walk-ins welcome, appointments preferred
+      </p>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery" aria-labelledby="gallery-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">From The Neighborhood</span>
+        <h2 id="gallery-heading">Blackwater In Ocean Beach</h2>
+        <p>A shop with a real history on Newport Ave, including the hard days.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <figure class="gallery-item">
+          <img src="photos/photo1.jpg" alt="The Blackwater Tattoo storefront window on Newport Avenue in Ocean Beach, shattered after a 2019 vandalism incident, with the street and passing traffic reflected in the cracked glass." decoding="async" width="623" height="364">
+          <figcaption>5003 Newport Ave, Ocean Beach, the storefront, weathering hard nights and staying open</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="photos/photo2.jpg" alt="Mike Kellerman, owner and tattoo artist at Blackwater Tattoo, speaking inside the shop." decoding="async" width="452" height="552">
+          <figcaption>Owner Mike &ldquo;SouthBay Mike&rdquo; Kellerman, inside the shop</figcaption>
+        </figure>
+      </div>
+      <p class="gallery-note">A real, working neighborhood shop with a real history, not stock photography.</p>
+    </div>
+  </section>
+
+  <section class="highlights" aria-label="Studio highlights">
+    <div class="wrap">
+      <div class="highlights-grid reveal">
+        <div class="highlight-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <h3>Ocean Beach Local</h3>
+          <p>Rooted in San Diego's OB neighborhood tattoo scene.</p>
+        </div>
+        <div class="highlight-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 L14.5 9 L21 9.5 L16 14 L17.5 21 L12 17 L6.5 21 L8 14 L3 9.5 L9.5 9 Z" stroke-linejoin="round"/></svg>
+          <h3>Veteran Artists</h3>
+          <p>Old-school craft honed over decades of real shop work.</p>
+        </div>
+        <div class="highlight-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 8v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Since 1996</h3>
+          <p>Deep local roots going back to the Chula Vista original.</p>
+        </div>
+        <div class="highlight-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Walk-In Friendly</h3>
+          <p>No appointment? No problem, come as you are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Good To Know</span>
+        <h2>Frequently Asked</h2>
+        <p>Straight answers before you sit down in the chair.</p>
+      </div>
+      <div class="faq-list reveal">
+
+        <details class="faq-item">
+          <summary>Do I need an appointment, or can I walk in?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Walk-ins are welcome at Blackwater Tattoo, though appointments are preferred for larger custom pieces so an artist can plan the design and set aside proper time. Call or stop by to check current availability.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What tattoo styles do the artists specialize in?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="faq-answer"><p>The shop covers a wide range: black &amp; gray realism, portrait work, Japanese-influenced designs, American traditional, biomechanical, and tribal. Bring reference images and talk through your idea with an artist before booking.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do I prepare for a tattoo appointment?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="faq-answer"><p>General best practice at any tattoo studio: get a good night's sleep, eat beforehand, stay hydrated, and avoid alcohol for at least 24 hours prior. Wear clothing that gives easy access to the area being tattooed.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is there a related Blackwater Tattoo location?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Yes, there's a related location at 323 Broadway in Chula Vista, the original shop opened by owner Mike &ldquo;SouthBay Mike&rdquo; Kellerman back in 1996.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How should I take care of a new tattoo?
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Your artist will walk you through aftercare before you leave the chair, typically keeping the area clean, moisturized, and out of direct sun while it heals. Ask in-shop for their specific aftercare instructions.</p></div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Come By</span>
+        <h2>Visit The Shop</h2>
+        <p>In the heart of Ocean Beach. Walk in or reach out to book your session.</p>
+      </div>
+
+      <div class="visit-grid reveal">
+        <div class="visit-card">
+          <h3>Studio Info</h3>
+          <ul class="info-list">
+            <li>
+              <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div>
+                <h4>Address</h4>
+                <p>5003 Newport Ave, Ocean Beach<br>San Diego, CA</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <h4>Hours</h4>
+                <p>Call or stop by for current hours, walk-ins welcome.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2 L14.5 9 L21 9.5 L16 14 L17.5 21 L12 17 L6.5 21 L8 14 L3 9.5 L9.5 9 Z" stroke-linejoin="round"/></svg></span>
+              <div>
+                <h4>Also In</h4>
+                <p>323 Broadway, Chula Vista, CA, the original 1996 location.</p>
+              </div>
+            </li>
+          </ul>
+          <div class="social-row">
+            <a class="social-link" href="https://www.yelp.com/biz/blackwater-tattoo-san-diego" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-1 3.5c.3-.1.7 0 .9.3l2 3a1 1 0 0 1-.3 1.4l-3.2 1.8a1 1 0 0 1-1.4-1.1l1.3-4.7c.1-.3.4-.6.7-.7zm4.6 6.4a1 1 0 0 1 .4 1.3l-1.6 3.1a1 1 0 0 1-1.6.2l-2-2.5a1 1 0 0 1 .6-1.6l3.4-.7c.3 0 .6.1.8.2zm-9.3-.5a1 1 0 0 1 1.3.5l1.5 3.2a1 1 0 0 1-1.2 1.4l-3.4-.9a1 1 0 0 1-.5-1.6l1.5-2.2c.2-.2.5-.4.8-.4z"/></svg>
+              Yelp Reviews
+            </a>
+            <a class="social-link" href="https://www.instagram.com/blackwatertattooparlor/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+              Instagram
+            </a>
+            <a class="social-link" href="https://www.facebook.com/Blackwatertattooclub/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 3h-2a5 5 0 0 0-5 5v3H6v4h2v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3z" stroke-linejoin="round"/></svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+
+        <a class="map-visual" href="https://www.google.com/maps/search/?api=1&query=Blackwater%20Tattoo%2C%205003%20Newport%20Ave%2C%20Ocean%20Beach%2C%20San%20Diego%2C%20CA" target="_blank" rel="noopener noreferrer" aria-label="Open Blackwater Tattoo location in Google Maps (opens in a new tab)">
+          <div class="map-visual-content">
+            <svg class="map-pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.8 11.2 7.1 11.5.3.2.6.2.9 0C12.2 21.2 19 15.4 19 10c0-4.4-3.6-8-7-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+            <div class="cta-text">Open in Google Maps</div>
+            <div class="cta-sub">5003 Newport Ave, Ocean Beach, San Diego, CA</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg class="mark" width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="18.5" stroke="#e05a28" stroke-width="1.5"/>
+          <path d="M20 8 L20 32 M12 14 L28 26 M28 14 L12 26" stroke="#efe9da" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="4" fill="#cc9a44"/>
+        </svg>
+        Blackwater Tattoo
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Blackwater Tattoo &middot; Ocean Beach, San Diego, CA</p>
+      <p>Custom tattoo studio &middot; roots since 1996</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // Mobile nav toggle
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function(){
+      var isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Scroll reveal (respects reduced motion via CSS override)
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+})();
+</script>
+
+</body>
+</html>
